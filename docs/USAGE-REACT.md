@@ -1,18 +1,18 @@
-# Using custom-dropdown in React
+# Using simple-custom-dropdown in React
 
-This document shows concise, copy-paste examples for using `custom-dropdown` in React projects (JavaScript and TypeScript), plus tips for SSR, styling, and testing.
+This document shows concise, copy-paste examples for using `simple-custom-dropdown` in React projects (JavaScript and TypeScript), plus tips for SSR, styling, and testing.
 
 ## Install
 
 ```bash
-npm install custom-dropdown
+npm install simple-custom-dropdown
 ```
 
 ## Basic usage (React JavaScript)
 
 ```jsx
 import React, { useRef, useEffect } from 'react';
-import { createDropdown } from 'custom-dropdown';
+import { createDropdown } from 'simple-custom-dropdown';
 
 export default function MyDropdown() {
   const containerRef = useRef(null);
@@ -45,7 +45,7 @@ export default function MyDropdown() {
 
 ```tsx
 import React, { useRef, useEffect } from 'react';
-import { createDropdown, OptionItem } from 'custom-dropdown';
+import { createDropdown, OptionItem } from 'simple-custom-dropdown';
 
 export default function MyDropdown(): JSX.Element {
   const containerRef = useRef<HTMLDivElement | null>(null);

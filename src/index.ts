@@ -11,7 +11,7 @@ export type OptionItem = {
 
 export function createDropdown(root: HTMLElement, options: OptionItem[], placeholder = 'Select') {
   const container = document.createElement('div');
-  container.className = 'custom-dropdown';
+  container.className = 'simple-custom-dropdown';
   container.tabIndex = -1;
 
   const button = document.createElement('button');

@@ -2,6 +2,104 @@ Publishing
 ----------
 
 This repo includes a GitHub Actions workflow `.github/workflows/release.yml` that publishes to npm when a GitHub Release is published. To use it:
+Local publish
+-------------
+
+To publish locally:
+Try the demo
+------------
+
+1. Build the package: `npm run build`
+Usage: nested options
+---------------------
+
+You can pass nested options and per-item onClick callbacks:
+```js
+import { createDropdown } from 'simple-custom-dropdown';
+
+const root = document.getElementById('app');
+# simple-custom-dropdown
+
+Install and usage
+-----------------
+
+```sh
+npm install simple-custom-dropdown
+```
+```js
+import { createDropdown } from 'simple-custom-dropdown';
+
+const root = document.getElementById('app');
+Ways to check the UI
+--------------------
+
+1) Manual demo (fast)
+2) Local dev server with HMR (recommended for iterative development)
+
+3) Automated E2E tests
+4) Component catalog / visual tests (Storybook)
+
+5) Accessibility checks
+Which option should I add next? I can scaffold E2E tests or Storybook stories and CI if you want automated UI checks.
+
+Quick copy-paste snippet for other projects
+------------------------------------------
+
+Use this short block in another project's docs or README to show how to install and use `simple-custom-dropdown`.
+Install
+
+```powershell
+npm install simple-custom-dropdown
+```
+Minimal usage (ESM)
+--------------------
+
+```html
+<div id="app"></div>
+<script type="module">
+	import { createDropdown } from 'simple-custom-dropdown';
+	createDropdown(document.getElementById('app'), [
+		{ value: '1', label: 'One' },
+		{ value: '2', label: 'Two' }
+	]);
+</script>
+``` 
+Browser embed (CDN)
+-------------------
+
+```html
+<script type="module">
+	import { createDropdown } from 'https://unpkg.com/simple-custom-dropdown@0.1.0/dist/index.esm.js';
+	createDropdown(document.getElementById('app'), [{ value: '1', label: 'One' }]);
+</script>
+```
+Event handling example
+-----------------------
+
+```js
+const container = createDropdown(root, items);
+container.addEventListener('change', (e) => console.log('selected', e.detail.value));
+```
+Multi-level (nested) lists
+--------------------------
+
+`simple-custom-dropdown` supports nested option trees. Each option can include a `children` array with more options. Keyboard support includes ArrowRight to open a child sublist and ArrowLeft to go back to the parent.
+
+Example:
+
+```js
+createDropdown(root, [
+	{ value: 'a', label: 'A' },
+	{ value: 'b', label: 'B', children: [
+		{ value: 'b-1', label: 'B-1' },
+		{ value: 'b-2', label: 'B-2', children: [ { value: 'b-2-1', label: 'B-2-1' } ] }
+	] }
+]);
+```
+Publishing
+----------
+
+This repo includes a GitHub Actions workflow `.github/workflows/release.yml` that publishes to npm when a GitHub Release is published. To use it:
 
 1. Create an npm automation token and add it to the repository secrets as `NODE_AUTH_TOKEN`.
 2. Create a release in GitHub (Draft -> Publish) or tag and push `v*` release.
@@ -38,7 +136,7 @@ Usage: nested options
 You can pass nested options and per-item onClick callbacks:
 
 ```js
-import { createDropdown } from 'custom-dropdown';
+import { createDropdown } from 'simple-custom-dropdown';
 
 const root = document.getElementById('app');
 createDropdown(root, [
@@ -49,18 +147,18 @@ createDropdown(root, [
 ```
 
 
-# custom-dropdown
+# simple-custom-dropdown
 
 A tiny, dependency-free custom dropdown component (library scaffold).
 
 Install and usage
 
 ```sh
-npm install custom-dropdown
+npm install simple-custom-dropdown
 ```
 
 ```js
-import { createDropdown } from 'custom-dropdown';
+import { createDropdown } from 'simple-custom-dropdown';
 
 const root = document.getElementById('app');
 createDropdown(root, [{ value: '1', label: 'One' }, { value: '2', label: 'Two' }]);
@@ -113,12 +211,12 @@ Which option should I add next? I can scaffold E2E tests or Storybook stories an
 Quick copy-paste snippet for other projects
 ------------------------------------------
 
-Use this short block in another project's docs or README to show how to install and use `custom-dropdown`.
+Use this short block in another project's docs or README to show how to install and use `simple-custom-dropdown`.
 
 Install
 
 ```powershell
-npm install custom-dropdown
+npm install simple-custom-dropdown
 ```
 
 Minimal usage (ESM)
@@ -126,7 +224,7 @@ Minimal usage (ESM)
 ```html
 <div id="app"></div>
 <script type="module">
-	import { createDropdown } from 'custom-dropdown';
+	import { createDropdown } from 'simple-custom-dropdown';
 	createDropdown(document.getElementById('app'), [
 		{ value: '1', label: 'One' },
 		{ value: '2', label: 'Two' }
@@ -138,7 +236,7 @@ Browser embed (CDN)
 
 ```html
 <script type="module">
-	import { createDropdown } from 'https://unpkg.com/custom-dropdown@0.1.0/dist/index.esm.js';
+	import { createDropdown } from 'https://unpkg.com/simple-custom-dropdown@0.1.0/dist/index.esm.js';
 	createDropdown(document.getElementById('app'), [{ value: '1', label: 'One' }]);
 </script>
 ```
@@ -153,7 +251,7 @@ container.addEventListener('change', (e) => console.log('selected', e.detail.val
 Multi-level (nested) lists
 --------------------------
 
-`custom-dropdown` supports nested option trees. Each option can include a `children` array with more options. Keyboard support includes ArrowRight to open a child sublist and ArrowLeft to go back to the parent.
+`simple-custom-dropdown` supports nested option trees. Each option can include a `children` array with more options. Keyboard support includes ArrowRight to open a child sublist and ArrowLeft to go back to the parent.
 
 Example:
 

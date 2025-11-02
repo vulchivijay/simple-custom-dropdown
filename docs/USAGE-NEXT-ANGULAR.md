@@ -1,13 +1,13 @@
-# Using custom-dropdown in Next.js and Angular
+# Using simple-custom-dropdown in Next.js and Angular
 
-This document contains copy-paste examples and guidance for integrating the `custom-dropdown` library into Next.js (both App Router and Pages Router) and Angular projects. It covers SSR considerations, styling, and testing tips.
+This document contains copy-paste examples and guidance for integrating the `simple-custom-dropdown` library into Next.js (both App Router and Pages Router) and Angular projects. It covers SSR considerations, styling, and testing tips.
 
 ---
 
 ## Install
 
 ```bash
-npm install custom-dropdown
+npm install simple-custom-dropdown
 ```
 
 ---
@@ -20,7 +20,7 @@ The `createDropdown` function uses DOM APIs, so you must run it on the client. U
 // app/components/DropdownClient.tsx
 'use client';
 import React, { useRef, useEffect } from 'react';
-import { createDropdown, OptionItem } from 'custom-dropdown';
+import { createDropdown, OptionItem } from 'simple-custom-dropdown';
 
 export default function DropdownClient({ options }: { options: OptionItem[] }) {
   const ref = useRef<HTMLDivElement | null>(null);
@@ -65,7 +65,7 @@ Angular apps use templates and components. Because `createDropdown` manipulates 
 ```ts
 // dropdown.component.ts
 import { Component, ElementRef, Input, OnDestroy, AfterViewInit } from '@angular/core';
-import { createDropdown, OptionItem } from 'custom-dropdown';
+import { createDropdown, OptionItem } from 'simple-custom-dropdown';
 
 @Component({
   selector: 'app-custom-dropdown',
@@ -105,7 +105,7 @@ export class DropdownComponent implements AfterViewInit, OnDestroy {
 
 ### Nested / multi-level lists
 
-`custom-dropdown` supports nested option trees via the `children` property. Keyboard navigation supports ArrowRight to open a child list and ArrowLeft to close it.
+`simple-custom-dropdown` supports nested option trees via the `children` property. Keyboard navigation supports ArrowRight to open a child list and ArrowLeft to close it.
 
 Example options:
 

@@ -1,6 +1,6 @@
 import { createDropdown } from '../src/index';
 
-describe('custom-dropdown', () => {
+describe('simple-custom-dropdown', () => {
   beforeEach(() => { document.body.innerHTML = '<div id="root"></div>'; });
 
   test('opens on click and emits change on selection', () => {

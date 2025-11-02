@@ -1,6 +1,6 @@
 # Nested menus, JSON schema, and accessibility notes
 
-This document covers visual diagrams of nested menus, a JSON schema for option trees used by `custom-dropdown`, and accessibility recommendations for deep nested lists.
+This document covers visual diagrams of nested menus, a JSON schema for option trees used by `simple-custom-dropdown`, and accessibility recommendations for deep nested lists.
 
 ---
 
